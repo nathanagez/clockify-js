@@ -1,22 +1,17 @@
-import fetch from 'node-fetch'
-import {Client} from "./client";
+import {Client} from "./endpoints/client";
 
 export default class Clockify {
-
-    private options: any;
-    private fetch: any;
     private static baseUrl = 'https://api.clockify.me/api/v1';
+    private readonly options: RequestInit;
     public client: Client;
 
-    constructor(options: any) {
-        this.options = options;
-        if (typeof window !== 'undefined') {
-            this.fetch = window.fetch.bind(window);
-        } else {
-            this.fetch = fetch
-        }
-        // Pass header etc..
-        this.client = new Client(Clockify.baseUrl, options);
+    constructor(apiKey: string) {
+        this.options = {
+            headers: {
+                'X-Api-Key': apiKey,
+            }
+        };
+        this.client = new Client(Clockify.baseUrl, this.options);
     }
 
     static getBaseUrl() {

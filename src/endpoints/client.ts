@@ -1,5 +1,5 @@
 import {RequestInit} from "node-fetch";
-import {Routes} from "./routes";
+import {Routes} from "../routes";
 
 export class Client extends Routes {
     static baseRoute = 'workspaces'
@@ -23,12 +23,12 @@ export class Client extends Routes {
         return this.request(`${this.uri}/${workspaceId}/clients`)
     }
 
-    update(workspaceId: string, clientId: string) {
+    async update(workspaceId: string, clientId: string) {
         // PUT
         return this.request(`${this.uri}/${workspaceId}/clients/${clientId}`)
     }
 
-    delete(workspaceId: string, clientId: string) {
+    async delete(workspaceId: string, clientId: string) {
         // DELETE
         return this.request(`${this.uri}/${workspaceId}/clients/${clientId}`)
     }
