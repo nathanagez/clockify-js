@@ -1,0 +1,30 @@
+{
+  "name": "clockify-js",
+  "version": "1.0.0",
+  "description": "Unofficial Clockify API wrapper",
+  "main": "index.ts",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanagez/clockify-js.git"
+  },
+  "keywords": [
+    "Clockify",
+    "API"
+  ],
+  "author": "Nathan AGEZ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nathanagez/clockify-js/issues"
+  },
+  "homepage": "https://github.com/nathanagez/clockify-js#readme",
+  "dependencies": {
+    "node-fetch": "^3.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}
